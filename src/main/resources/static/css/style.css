@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+body{
+	color:white;
+	background-color: dodgerblue;
+}
+
+input[type=text]{
+	border:none;
+	background-color: rgba(0,0,255,0.2);
+	color:white;
+	
+}
+
+input[type=text]:focus{
+	outline:none;
+	background-color: rgba(0,0,255,0.2);
+	color:white;
+	
+}
+
+input[type=text]::-webkit-input-placeholder { /* Edge */
+  color: white;
+  opacity:0.8;
+}
+
+input[type=text]::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+input[type=file]::file-selector-button{
+	border:none;
+	outline:none;
+	background-color:#28a745;
+	color:white;
+	border-radius:10%;
+	padding:1vh;
+}
+
+input[type=file]::file-selector-button:hover{
+	cursor:pointer;
+	background-color: rgba(0,0,0,0.2);
+}
+
+a{
+  color: white;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.linkdsgn{
+	color:dodgerblue;
+}
+
+.linkdsgn:hover {
+  color: inherit;
+}
