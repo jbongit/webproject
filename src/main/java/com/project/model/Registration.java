@@ -1,18 +1,11 @@
 package com.project.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "REGISTRATION_INFO")
@@ -22,20 +15,14 @@ public class Registration {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@NotBlank(message="Name Can Not Be Empty !!")
 	private String name;
 
 	@Column(unique = true)
-	@Email(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z_.-]+$",message="Must Be in Form of 'user@example.com'")
-	@NotBlank(message="Email Can Not Be Empty !!")
 	private String emailid;
-	
-	@NotBlank(message="Password Can Not Be Empty !!")
+
 	private String password;
 
-	@NotBlank(message="Mobile Number Can Not Be Empty !!")
-	@Pattern(regexp="^[0-9]{10}$",message="Mobile Number must consists of 10 Digits")
-	private String mobileno;
+	private Long mobileno;
 
 	private String imageURL;
 	
@@ -74,11 +61,11 @@ public class Registration {
 		this.password = password;
 	}
 
-	public String getMobileno() {
+	public Long getMobileno() {
 		return mobileno;
 	}
 
-	public void setMobileno(String mobileno) {
+	public void setMobileno(Long mobileno) {
 		this.mobileno = mobileno;
 	}
 

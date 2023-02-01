@@ -5,21 +5,21 @@ body{
 	background-color: dodgerblue;
 }
 
-input[type=text], input[type=password]{
+input[type=text]{
 	border:none;
 	background-color: rgba(0,0,255,0.2);
 	color:white;
 	
 }
 
-input[type=text]:focus,input[type=password]:focus{
+input[type=text]:focus{
 	outline:none;
 	background-color: rgba(0,0,255,0.2);
 	color:white;
 	
 }
 
-input[type=text]::-webkit-input-placeholder,input[type=password]::-webkit-input-placeholder { /* Edge */
+input[type=text]::-webkit-input-placeholder { /* Edge */
   color: white;
   opacity:0.8;
 }
@@ -57,10 +57,4 @@ a:hover {
 
 .linkdsgn:hover {
   color: inherit;
-}
-.invalid-feedback{
-	color:orange;
-}
-input[type=password]::-ms-reveal{
-	filter:invert(100%);
 }
