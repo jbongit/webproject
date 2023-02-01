@@ -20,7 +20,7 @@ if (success!=null) {
 %>
 
 <div class="alert alert-success" role="alert">
-	<strong>${success} --> <a class="linkdsgn" href="/user/${user.emailid}">Go To User DashBoard!!</a></strong>
+	<strong>${success} --> <a class="linkdsgn" href="/user/${user.id}">Go To User DashBoard!!</a></strong>
 	
 </div>
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.fasterxml.jackson.annotation.JsonInclude.Include"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -16,34 +17,39 @@
 			<h1>Registration Form !!</h1>
 		</div>
 
-		<form method="POST" action="saveUser" enctype="multipart/form-data">
-			<%@include file="message.jsp"%>
+		<form method="POST" action="/saveUser" enctype="multipart/form-data">
+			<%@include file="message.jsp"%>		
 			<div class="form-group">
 				<label>Name :</label> <input class="form-control form-control-sm"
-					type="text" name="name" required="required" />
+					type="text" name="name" required="required"/>
+					<c:if test="${nameError != null}"><div class="invalid-feedback d-block">${nameError}</div></c:if>
 			</div>
 			<div class="form-group">
 				<label>Email ID :</label> <input
-					class="form-control form-control-sm" type="text" name="emailid"
-					required="required" />
+					class="form-control form-control-sm" type="text" name="emailid" required="required"/>
+					<c:if test="${emailidError != null}"><div class="invalid-feedback d-block">${emailidError}</div></c:if>
 			</div>
 
 			<div class="form-group">
 				<label>Password :</label> <input
-					class="form-control form-control-sm" type="text" name="password"
-					required="required" />
+					class="form-control form-control-sm" type="password" name="password" required="required"
+					 />
+					<c:if test="${passwordError != null}"><div class="invalid-feedback d-block">${passwordError}</div></c:if>
 			</div>
 
 			<div class="form-group">
 				<label> Mobile No. :</label> <input
 					class="form-control form-control-sm" type="text" name="mobileno"
-					required="required" />
+					required="required"
+					 />
+				<c:if test="${mobilenoError != null}"><div class="invalid-feedback d-block">${mobilenoError}</div></c:if>	 
 			</div>
 
 			<div class="form-group">
 				<label> Image :</label> <input type="file" class="form-control-file"
 					id="profileImage" name="profileImage" accept="image/*"
-					required="required" />
+					required="required"
+					/>
 			</div>
 			<div align="center">
 				<input class="btn btn-success" type="submit" value="SUBMIT" />
