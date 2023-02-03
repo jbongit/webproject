@@ -42,6 +42,9 @@ public class Registration {
 	@Column(nullable=false ,columnDefinition = "varchar(255) default 'ROLE_USER'")
 	private String role;
 
+	@Column(nullable=false ,columnDefinition = "varchar(255) default 'PENDING'")
+	private String status;
+	
 	public int getId() {
 		return id;
 	}
@@ -98,10 +101,18 @@ public class Registration {
 		this.role = role;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
 		return "Registration [id=" + id + ", name=" + name + ", emailid=" + emailid + ", password=" + password
-				+ ", mobileno=" + mobileno + ", imageURL=" + imageURL + ", role=" + role + "]";
+				+ ", mobileno=" + mobileno + ", imageURL=" + imageURL + ", role=" + role + ", status=" + status + "]";
 	}
 
 }

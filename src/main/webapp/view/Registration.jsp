@@ -21,25 +21,25 @@
 			<%@include file="message.jsp"%>		
 			<div class="form-group">
 				<label>Name :</label> <input class="form-control form-control-sm"
-					type="text" name="name" required="required"/>
+					type="text" name="name" value="${user.name}" required="required"/>
 					<c:if test="${nameError != null}"><div class="invalid-feedback d-block">${nameError}</div></c:if>
 			</div>
 			<div class="form-group">
 				<label>Email ID :</label> <input
-					class="form-control form-control-sm" type="text" name="emailid" required="required"/>
+					class="form-control form-control-sm" type="text" name="emailid" value="${user.emailid}" required="required"/>
 					<c:if test="${emailidError != null}"><div class="invalid-feedback d-block">${emailidError}</div></c:if>
 			</div>
 
 			<div class="form-group">
 				<label>Password :</label> <input
-					class="form-control form-control-sm" type="password" name="password" required="required"
+					class="form-control form-control-sm" type="password" name="password" value="${user.password}" required="required"
 					 />
 					<c:if test="${passwordError != null}"><div class="invalid-feedback d-block">${passwordError}</div></c:if>
 			</div>
 
 			<div class="form-group">
 				<label> Mobile No. :</label> <input
-					class="form-control form-control-sm" type="text" name="mobileno"
+					class="form-control form-control-sm" type="text" name="mobileno"  value="${user.mobileno}"
 					required="required"
 					 />
 				<c:if test="${mobilenoError != null}"><div class="invalid-feedback d-block">${mobilenoError}</div></c:if>	 

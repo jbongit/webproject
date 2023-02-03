@@ -21,7 +21,7 @@
 				<div class="card p-3 py-4">
 
 					<div class="text-center">
-						<img src="/img/${user.imageURL}" width="400">
+						<img src="/img/${user.imageURL}" width="350">
 					</div>
 
 					<div class="text-center mt-3">
@@ -47,6 +47,11 @@
 								<tr>
 									<td class="boldf">Mobile No</td>
 									<td>${user.mobileno}</td>
+								</tr>
+								
+								<tr>
+									<td class="boldf">Approval Status</td>
+									<td>${user.status}</td>
 								</tr>
 								
 						</table>

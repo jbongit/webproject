@@ -50,25 +50,6 @@ body{
 }
 
 
-.buttons button:nth-child(1){
-       border:1px solid dodgerblue !important;
-       color:dodgerblue;
-       height:40px;
-}
-
-.buttons button:nth-child(1):hover{
-       border:1px solid dodgerblue !important;
-       color:#fff;
-       height:40px;
-       background-color:dodgerblue;
-}
-
-.buttons button:nth-child(2){
-       border:1px solid dodgerblue!important;
-       background-color:dodgerblue;
-       color:#fff;
-        height:40px;
-}
 
 table{
 	border:solid 2px dodgerblue!important;
@@ -91,5 +72,40 @@ td{
 	position:absolute;
 	top:5%;
 	left:85%;
+}
+
+.approval-dsgn{
+	position:absolute;
+	top:5%;
+	left:68%;
+}
+
+.hdng-dsgn{
+	position:absolute;
+	color: dodgerblue; 
+	top:4%;
+	left:7%;
+	font-weight: 700;
+}
+
+.table-dsgn{
+	margin-top:11vh;
 }	
+
+.approve-btn{
+	background:green;
+	color:white;
+	border:none;
+}
+
+.reject-btn{
+	background: #f40000;
+	color:white;
+	border:none;
+}
+
+.approve-btn:hover , .reject-btn:hover{
+	background-color:black;
+	opacity:50%;
+}
 	

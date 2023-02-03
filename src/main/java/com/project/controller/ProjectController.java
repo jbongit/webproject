@@ -58,9 +58,10 @@ public class ProjectController {
 					redirectAttributes.addFlashAttribute(fieldName+"Error",errorMessage);
 //					System.out.println(fieldName+"Error "+errorMessage);
 				}
-
+				redirectAttributes.addFlashAttribute("user",user);
 				return "redirect:/registration";
 			}
+			user.setStatus("PENDING");
 			user.setRole("ROLE_USER");
 			System.out.println(user.getPassword());
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
