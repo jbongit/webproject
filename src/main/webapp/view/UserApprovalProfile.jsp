@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,22 +15,15 @@
 				<strong>LOGOUT</strong>
 			</button></a>
 	</div>
-	<div class="changepass-dsgn">
-		<a href="/user/${user.id}/changepassword"><button
-				class="btn btn-success">
-				<strong>CHANGE PASSWORD</strong>
-			</button></a>
-	</div>
 	<div class="container mt-5">
+
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-7">
 
 				<div class="card p-3 py-4">
-					<div><c:if test="${error !=null}">
-			<strong><div class="alert alert-success">${error}</div></strong>
-		</c:if></div>
+
 					<div class="text-center">
-						<img src="/img/${user.imageURL}" width="350">
+						<img src="/img/${user.imageURL}" width="400">
 					</div>
 
 					<div class="text-center mt-3">
@@ -59,19 +51,18 @@
 								<td>${user.mobileno}</td>
 							</tr>
 
-							<tr>
-								<td class="boldf">Approval Status</td>
-								<td>${user.status}</td>
-							</tr>
-
 						</table>
 
 						<div class="buttons">
-							<a href="/user/${user.id}/update"><button
-									class="btn btn-outline-primary px-4">Update</button></a> <a
-								href="/user/${user.id}/delete"
-								onclick="if(!(confirm('Are You Sure You Want To Delete This User?'))) return false"><button
-									class="btn btn-primary px-4 ms-3 delete-btn">Delete</button></a>
+						
+								<a href="${user.id}/approved"
+							onclick="if(!(confirm('Are You Sure You Want To Approve This User?'))) return false">
+								<button class="btn btn-outline-primary px-4 approve-btn">Approve</button></a>
+						
+							<a href="${user.id}/rejected"
+								onclick="if(!(confirm('Are You Sure You Want To Reject This User?'))) return false"><button
+									class="btn btn-primary px-4 ms-3 reject-btn">Reject</button></a>
+									
 						</div>
 
 					</div>

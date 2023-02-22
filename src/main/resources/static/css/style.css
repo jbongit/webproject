@@ -64,3 +64,16 @@ a:hover {
 input[type=password]::-ms-reveal{
 	filter:invert(100%);
 }
+
+.card{
+	background-color:#007dfb;
+	width:50vw;
+	margin-top:2.8vw;
+	padding:2vw;
+}
+.form-group{
+	margin-bottom:1vw;
+}
+label{
+	margin-bottom:5px;
+}

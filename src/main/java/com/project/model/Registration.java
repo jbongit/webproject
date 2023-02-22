@@ -1,6 +1,8 @@
 package com.project.model;
 
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,10 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "REGISTRATION_INFO")
@@ -42,6 +41,15 @@ public class Registration {
 	@Column(nullable=false ,columnDefinition = "varchar(255) default 'ROLE_USER'")
 	private String role;
 
+	@Column(nullable=false ,columnDefinition = "varchar(255) default 'PENDING'")
+	private String status;
+	
+	private String approverName;
+	
+	private LocalDateTime RegistrationdateTime;
+	
+	private String OTP;
+	
 	public int getId() {
 		return id;
 	}
@@ -98,10 +106,44 @@ public class Registration {
 		this.role = role;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getApproverName() {
+		return approverName;
+	}
+
+	public void setApproverName(String approverName) {
+		this.approverName = approverName;
+	}
+
+	public LocalDateTime getRegistrationdateTime() {
+		return RegistrationdateTime;
+	}
+
+	public void setRegistrationdateTime(LocalDateTime registrationdateTime) {
+		RegistrationdateTime = registrationdateTime;
+	}
+
+	public String getOTP() {
+		return OTP;
+	}
+
+	public void setOTP(String oTP) {
+		OTP = oTP;
+	}
+
 	@Override
 	public String toString() {
 		return "Registration [id=" + id + ", name=" + name + ", emailid=" + emailid + ", password=" + password
-				+ ", mobileno=" + mobileno + ", imageURL=" + imageURL + ", role=" + role + "]";
+				+ ", mobileno=" + mobileno + ", imageURL=" + imageURL + ", role=" + role + ", status=" + status
+				+ ", approverName=" + approverName + ", RegistrationdateTime=" + RegistrationdateTime + ", OTP=" + OTP
+				+ "]";
 	}
 
 }
