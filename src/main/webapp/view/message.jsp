@@ -28,3 +28,33 @@ if (success!=null) {
 session.removeAttribute("success");
 }
 %>
+
+<%
+String OTPmessage = (String) session.getAttribute("OTPmessage");
+if (OTPmessage != null) {
+%>
+
+<div class="alert alert-info" role="alert">
+	<strong>${OTPmessage}</strong>
+	
+</div>
+
+<%
+session.removeAttribute("OTPmessage");
+}
+%>
+
+<%
+String pwchanged = (String) session.getAttribute("pwchanged");
+if (pwchanged != null) {
+%>
+
+<div class="alert alert-info" role="alert">
+	<strong>${pwchanged}</strong>
+	
+</div>
+
+<%
+session.removeAttribute("pwchanged");
+}
+%>

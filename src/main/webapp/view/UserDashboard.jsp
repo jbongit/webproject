@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,16 +11,25 @@
 <title>User DashBoard</title>
 </head>
 <body>
-<div class="logout-dsgn">
-<a href="/logout"><button class="btn btn-danger"><strong>LOGOUT</strong></button></a>
-</div>
+	<div class="logout-dsgn">
+		<a href="/logout"><button class="btn btn-danger">
+				<strong>LOGOUT</strong>
+			</button></a>
+	</div>
+	<div class="changepass-dsgn">
+		<a href="/user/${user.id}/changepassword"><button
+				class="btn btn-success">
+				<strong>CHANGE PASSWORD</strong>
+			</button></a>
+	</div>
 	<div class="container mt-5">
-
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-7">
 
 				<div class="card p-3 py-4">
-
+					<div><c:if test="${error !=null}">
+			<strong><div class="alert alert-success">${error}</div></strong>
+		</c:if></div>
 					<div class="text-center">
 						<img src="/img/${user.imageURL}" width="350">
 					</div>
@@ -29,37 +39,39 @@
 						<table class="table table-striped" border="1">
 
 
-								<tr>
-									<td class="boldf">User ID</td>
-									<td>${user.id}</td>
-								</tr>
+							<tr>
+								<td class="boldf">User ID</td>
+								<td>${user.id}</td>
+							</tr>
 
-								<tr>
-									<td class="boldf">Name</td>
-									<td>${user.name}</td>
-								</tr>
-								
-								<tr>
-									<td class="boldf">Email ID</td>
-									<td>${user.emailid}</td>
-								</tr>
-								
-								<tr>
-									<td class="boldf">Mobile No</td>
-									<td>${user.mobileno}</td>
-								</tr>
-								
-								<tr>
-									<td class="boldf">Approval Status</td>
-									<td>${user.status}</td>
-								</tr>
-								
+							<tr>
+								<td class="boldf">Name</td>
+								<td>${user.name}</td>
+							</tr>
+
+							<tr>
+								<td class="boldf">Email ID</td>
+								<td>${user.emailid}</td>
+							</tr>
+
+							<tr>
+								<td class="boldf">Mobile No</td>
+								<td>${user.mobileno}</td>
+							</tr>
+
+							<tr>
+								<td class="boldf">Approval Status</td>
+								<td>${user.status}</td>
+							</tr>
+
 						</table>
 
 						<div class="buttons">
-							<a href="/user/${user.id}/update"><button class="btn btn-outline-primary px-4">Update</button></a>
-							<a href="/user/${user.id}/delete"
-						onclick="if(!(confirm('Are You Sure You Want To Delete This User?'))) return false"><button class="btn btn-primary px-4 ms-3 delete-btn">Delete</button></a>
+							<a href="/user/${user.id}/update"><button
+									class="btn btn-outline-primary px-4">Update</button></a> <a
+								href="/user/${user.id}/delete"
+								onclick="if(!(confirm('Are You Sure You Want To Delete This User?'))) return false"><button
+									class="btn btn-primary px-4 ms-3 delete-btn">Delete</button></a>
 						</div>
 
 					</div>

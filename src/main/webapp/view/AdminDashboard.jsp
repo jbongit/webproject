@@ -22,9 +22,21 @@
 				<strong>PENDING APPROVALS</strong>
 			</button></a>	
 	</div>
+	<div class="reportbtn-dsgn">
+		<a href="/admin/report"><button class="btn btn-success">
+				<strong>GENERATE REPORT</strong>
+			</button></a>	
+	</div>
 	<div class="container">
 		<h1 class="hdng-dsgn">USERS INFORMATION</h1>
 		<br>
+		<div class="search-container">
+		<form action="/admin/search" method="POST">
+		<input id="searchQuery" type="text" name="searchQuery" class="form-control form-control-sm search-dsgn" placeholder="Search User By Name">
+		<div class="search-btn"><input type="submit" class="btn btn-success" value="Search" ></div>
+		</form>
+		
+		</div>
 		<table class="table table-striped table-dsgn" border="1">
 			<thead style="font-weight:bold">
 				<tr>
